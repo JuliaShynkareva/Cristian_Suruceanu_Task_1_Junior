@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Description</title>
+</head>
+<body>
+<p>You added this product: </p>
+<table>
+    <tr>
+        <td><h4>Name: </h4></td>
+        <td><h4 th:text="${product.name}"></h4></td>
+    </tr>
+    <tr>
+        <td><h4>Price: </h4></td>
+        <td><h4 th:text="${product.price}"></h4></td>
+    </tr>
+    <tr>
+        <td><h4>Quantity: </h4></td>
+        <td><h4 th:text="${product.qty}"></h4></td>
+    </tr>
+    <tr>
+        <td><h4>Id: </h4></td>
+        <td><h4 th:text="${product.id}"></h4></td>
+    </tr>
+</table>
+<a href="/">Going back</a>
+<form action="#" th:action="@{'/delete/{id}'(id=${product.id})}" th:method="delete" >
+    <input type="hidden" name="_method" value="delete" />
+    <button type="submit" id="submitButton"> DELETE </button>
+</form>
+</body>
+</html>
